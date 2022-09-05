@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
                                          QObject::tr("connection successful.\n"
                                                      "Click cancel to exit."),
                                  QMessageBox::Cancel);
+
     }
     else
     {

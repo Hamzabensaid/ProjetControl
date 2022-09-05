@@ -33,6 +33,7 @@ public:
     bool modifier(int , QString , QString , int , QString );
     QSqlQueryModel * afficher();
     QSqlQueryModel * recherche(QString , QString , int , QString);
+    QSqlQueryModel * trier(QString);
 
 
 };

@@ -253,7 +253,7 @@ QPushButton:focus
 </string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="clients">
        <widget class="QTabWidget" name="ClientsTabWidget">
@@ -323,7 +323,7 @@ QTabBar::tab:selected
          <enum>QTabWidget::Rounded</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <property name="elideMode">
          <enum>Qt::ElideRight</enum>
@@ -1045,6 +1045,85 @@ border: 0px;</string>
              <property name="text">
               <string>Nom</string>
              </property>
+            </widget>
+            <widget class="QPushButton" name="TriClientButton">
+             <property name="geometry">
+              <rect>
+               <x>10</x>
+               <y>40</y>
+               <width>181</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
+             </property>
+             <property name="text">
+              <string>TRIER</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="ClientTriComboBox">
+             <property name="geometry">
+              <rect>
+               <x>200</x>
+               <y>40</y>
+               <width>253</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>id</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>nom</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>prenom</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>numero</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>email</string>
+              </property>
+             </item>
             </widget>
            </widget>
           </item>
@@ -2807,13 +2886,24 @@ QPushButton:focus
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QComboBox" name="ClientComboBox"/>
+            <widget class="QComboBox" name="ClientComboBox">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+            </widget>
            </item>
            <item row="1" column="1">
-            <widget class="QComboBox" name="EventComboBox"/>
+            <widget class="QComboBox" name="EventComboBox">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+            </widget>
            </item>
            <item row="0" column="0">
             <widget class="QLabel" name="label">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(249, 167, 43);</string>
+             </property>
              <property name="text">
               <string>id client</string>
              </property>
@@ -2821,6 +2911,9 @@ QPushButton:focus
            </item>
            <item row="1" column="0">
             <widget class="QLabel" name="label_2">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(249, 167, 43);</string>
+             </property>
              <property name="text">
               <string>id event</string>
              </property>

@@ -8,7 +8,7 @@ bool Connection::CreateConnection()
 {
     db = QSqlDatabase::addDatabase("QODBC");
     bool test = false;
-    //db.setHostName("sql7.freesqldatabase.com");
+
     db.setUserName("system");
     db.setPassword("0000");
     db.setDatabaseName("database_s1");

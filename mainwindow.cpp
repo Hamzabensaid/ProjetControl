@@ -66,12 +66,6 @@ void MainWindow::on_TicketsButton_clicked()
 }
 
 
-void MainWindow::on_StatisticButton_clicked()
-{
-    ui->DashboardPages->setCurrentIndex(3);
-}
-
-
 void MainWindow::on_ClientAddButton_clicked()
 {
     QString nom = ui->ClientNomAdd->text();
@@ -81,7 +75,13 @@ void MainWindow::on_ClientAddButton_clicked()
 
     Client C(nom, prenom, numero, email);
 
-
+    /*
+    Client C ;
+    C.setNom(nom);
+    C.setPrenom(prenom);
+    C.setNumero(numero);
+    C.setEmail(email);
+*/
 
     bool test = C.ajouter();
 
@@ -251,6 +251,7 @@ void MainWindow::on_EventUpdateButton_clicked()
         ui->EventCapaciteUpdate->setText(QString::number(capacite));
         ui->EventDescriptionUpdate->setText(description);
         ui->EventPrixUpdate->setText(QString::number(prix));
+
         ui->EventsTabWidget->setCurrentIndex(2);
     }
     else
@@ -339,7 +340,7 @@ void MainWindow::on_SearchEventButton_clicked()
 
 void MainWindow::on_PrintTicketButton_clicked()
 {
-    QString link =QFileDialog::getExistingDirectory(this, tr("Open Directory"),"",QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks)+"/"+"test"+".pdf";
+    QString link =QFileDialog::getExistingDirectory(this, tr("Open Directory"),"",QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks)+"/"+"ticket"+".pdf";
 
     int clientID = ui->ClientComboBox->currentText().toInt();
     int EvenementID = ui->EventComboBox->currentText().toInt();
@@ -364,3 +365,13 @@ void MainWindow::on_PrintTicketButton_clicked()
     }
 }
 
+
+void MainWindow::on_TriClientButton_clicked()
+{
+    QString Orderby = ui->ClientTriComboBox->currentText();
+
+    //ui->EventTableView->setModel(EVENT.afficher());
+
+    ui->ClientTableView->setModel(CLIENT.trier(Orderby));
+    qDebug() << Orderby;
+}

@@ -35,8 +35,6 @@ private slots:
 
     void on_TicketsButton_clicked();
 
-    void on_StatisticButton_clicked();
-
     void on_ClientAddButton_clicked();
 
     void on_ClientDeleteButton_clicked();
@@ -59,6 +57,8 @@ private slots:
     void on_SearchEventButton_clicked();
 
     void on_PrintTicketButton_clicked();
+
+    void on_TriClientButton_clicked();
 
 private:
     Ui::MainWindow *ui;

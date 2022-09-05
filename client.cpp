@@ -1,6 +1,7 @@
 #include "client.h"
 #include <QString>
 #include <QMessageBox>
+#include <QDebug>
 
 Client::Client(){}
 
@@ -119,7 +120,7 @@ QSqlQueryModel * Client::afficher()
      QSqlQueryModel * model=new QSqlQueryModel();
      QSqlQuery query;
 
-     query.prepare("select * from les_clients where (  (prenom = :prenom) OR (numero = :numero) OR (email = :email) OR (nom = :nom)) order by nom");
+     query.prepare("select * from les_clients where (  (prenom = :prenom) OR (numero = :numero) OR (email = :email) OR (nom = :nom)) ");
      query.bindValue(":nom", nom);
      query.bindValue(":prenom",prenom);
      query.bindValue(":numero",numero);
@@ -127,6 +128,25 @@ QSqlQueryModel * Client::afficher()
 
      query.exec();
 
+     model->setQuery(query);
+
+     model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
+     model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
+     model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
+     model->setHeaderData(3,Qt::Horizontal,QObject::tr("numero"));
+     model->setHeaderData(4,Qt::Horizontal,QObject::tr("email"));
+
+     return model;
+ }
+ QSqlQueryModel * Client::trier(QString OrderBy)
+ {
+     QSqlQueryModel * model=new QSqlQueryModel();
+     QSqlQuery query;
+
+     query.prepare("select * from les_clients order by numero ;");
+     query.bindValue(":o",OrderBy);
+     query.exec();
+qDebug() << OrderBy;
      model->setQuery(query);
 
      model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
