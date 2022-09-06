@@ -143,8 +143,8 @@ QSqlQueryModel * Client::afficher()
      QSqlQueryModel * model=new QSqlQueryModel();
      QSqlQuery query;
 
-     query.prepare("select * from les_clients order by numero ;");
-     query.bindValue(":o",OrderBy);
+     query.prepare("select * from les_clients order by "+OrderBy+" ;");
+
      query.exec();
 qDebug() << OrderBy;
      model->setQuery(query);

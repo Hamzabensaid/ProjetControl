@@ -60,6 +60,8 @@ private slots:
 
     void on_TriClientButton_clicked();
 
+    void on_TriEventButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

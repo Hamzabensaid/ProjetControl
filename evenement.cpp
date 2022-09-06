@@ -161,3 +161,24 @@ QSqlQueryModel * Evenement::afficher()
      return model;
  }
 
+ QSqlQueryModel * Evenement::trier(QString OrderBy)
+ {
+     QSqlQueryModel * model=new QSqlQueryModel();
+     QSqlQuery query;
+
+     query.prepare("select * from evenements order by "+OrderBy+" ;");
+
+     query.exec();
+qDebug() << OrderBy;
+     model->setQuery(query);
+
+     model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
+     model->setHeaderData(1,Qt::Horizontal,QObject::tr("titre"));
+     model->setHeaderData(2,Qt::Horizontal,QObject::tr("date"));
+     model->setHeaderData(3,Qt::Horizontal,QObject::tr("capacite"));
+     model->setHeaderData(4,Qt::Horizontal,QObject::tr("description"));
+     model->setHeaderData(5,Qt::Horizontal,QObject::tr("prix (dt)"));
+
+     return model;
+ }
+

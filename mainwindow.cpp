@@ -72,7 +72,7 @@ void MainWindow::on_ClientAddButton_clicked()
     QString prenom = ui->ClientPrenomAdd->text();
     int numero = ui->ClientNumeroAdd->text().toInt();
     QString email = ui->ClientEmailAdd->text();
-
+    qDebug() << QString::number(numero);
     Client C(nom, prenom, numero, email);
 
     /*
@@ -222,6 +222,8 @@ void MainWindow::on_EventAddButton_clicked()
         ui->EventComboBox->clear();
         ui->EventComboBox->addItems(TICKET.EvenementList());
 
+        chartview->setChart(TICKET.chart());
+
         QMessageBox::information(nullptr,"Success","event registered successfully.");
 
     }
@@ -282,6 +284,8 @@ void MainWindow::on_EventModifierButton_clicked()
 
         ui->EventComboBox->clear();
         ui->EventComboBox->addItems(TICKET.EvenementList());
+
+        chartview->setChart(TICKET.chart());
 
         QMessageBox::information(nullptr,"Success","event registered successfully.");
 
@@ -373,5 +377,15 @@ void MainWindow::on_TriClientButton_clicked()
     //ui->EventTableView->setModel(EVENT.afficher());
 
     ui->ClientTableView->setModel(CLIENT.trier(Orderby));
+    qDebug() << Orderby;
+}
+
+void MainWindow::on_TriEventButton_clicked()
+{
+    QString Orderby = ui->EventTriComboBox->currentText();
+
+
+
+    ui->EventTableView->setModel(EVENT.trier(Orderby));
     qDebug() << Orderby;
 }

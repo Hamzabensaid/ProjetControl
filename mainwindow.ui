@@ -253,7 +253,7 @@ QPushButton:focus
 </string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="clients">
        <widget class="QTabWidget" name="ClientsTabWidget">
@@ -1915,6 +1915,85 @@ QPushButton:focus
              </property>
              <property name="text">
               <string>Delete</string>
+             </property>
+            </widget>
+            <widget class="QComboBox" name="EventTriComboBox">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>510</y>
+               <width>181</width>
+               <height>22</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <item>
+              <property name="text">
+               <string>id</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>titre</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>capacite</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>prix</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string/>
+              </property>
+             </item>
+            </widget>
+            <widget class="QPushButton" name="TriEventButton">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>540</y>
+               <width>181</width>
+               <height>21</height>
+              </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton
+{
+	background-color:rgb(50, 53, 57);
+	border-style:solid;
+	border-radius:7px;
+	border-width:1px;
+border-color: rgb(50, 53, 57);
+	color:#ffffff;
+	font-size:16px;
+font-family:Calibri;
+}
+
+QPushButton:hover
+{
+	background-color: #00000000;
+	border-color: rgb(30, 227, 0);
+	/*color:rgb(30, 227, 0);*/
+}
+
+QPushButton:focus
+{
+	background-color:  rgb(30, 227, 0);
+	border-color: rgba(30, 227, 0,0);
+	color:rgb(255, 255, 255);
+}
+</string>
+             </property>
+             <property name="text">
+              <string>TRIER</string>
              </property>
             </widget>
            </widget>

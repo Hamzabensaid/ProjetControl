@@ -37,6 +37,7 @@ public:
     bool modifier(int, QString, QDate, int, QString, double);
     QSqlQueryModel * afficher();
     QSqlQueryModel * recherche(QString, int, QString, double);
+    QSqlQueryModel * trier(QString);
 };
 
 #endif // EVENEMENT_H
